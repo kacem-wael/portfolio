@@ -1,0 +1,8 @@
+# Original, uncompressed source videos — kept locally, never deployed
+media-originals/
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
