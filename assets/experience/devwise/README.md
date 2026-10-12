@@ -1,6 +1,6 @@
 # DevWise
 
-Full-Stack internship — ExamGen
+Full-Stack internship — ExamBuilder
 
 Drop media here (see `assets/README.md` for the full guide):
 

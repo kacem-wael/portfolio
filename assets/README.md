@@ -44,7 +44,7 @@ assets/
 ├─ projects/
 │  ├─ econexus/          EcoNexus — ML / FinTech platform
 │  ├─ clinika/           Clinika — dental SaaS (in production)
-│  ├─ examgen/           ExamGen — exam-generation SaaS
+│  ├─ exambuilder/       ExamBuilder — exam-generation SaaS
 │  ├─ moove/             Moove — gym / sports management app
 │  ├─ experthub/         ExpertHub — experts marketplace
 │  ├─ stockfacturation/  StockFacturation — WPF desktop app
@@ -52,7 +52,7 @@ assets/
 │  └─ E-Uber/            E-Uber — ride-hailing app
 ├─ experience/
 │  ├─ warp-analytics/    Apprenticeship (Clinika + Moove)
-│  └─ devwise/           Internship (ExamGen)
+│  └─ devwise/           Internship (ExamBuilder)
 ├─ events/
 │  ├─ robocup-7/         RoboCup 7.0 — organizing committee
 │  ├─ robocup-8/         RoboCup 8.0 — jury member

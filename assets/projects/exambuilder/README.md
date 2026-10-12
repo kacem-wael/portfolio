@@ -1,4 +1,4 @@
-# ExamGen
+# ExamBuilder
 
 Automated exam-creation SaaS for teachers
 
