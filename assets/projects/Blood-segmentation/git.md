@@ -1,0 +1,1 @@
+https://github.com/kacem-wael/Blood-segmentation-and-anomaly-detection

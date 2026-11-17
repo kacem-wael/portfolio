@@ -42,6 +42,8 @@ One link per line: `Label | URL`. Tell me when they're in and I'll add the butto
 ```
 assets/
 ├─ projects/
+│  ├─ nsitni/            Nsitni — Alzheimer diagnosis from MRI + PET (poster.pdf linked)
+│  ├─ Blood-segmentation/ Blood cell segmentation — mathematical morphology
 │  ├─ econexus/          EcoNexus — ML / FinTech platform
 │  ├─ clinika/           Clinika — dental SaaS (in production)
 │  ├─ exambuilder/       ExamBuilder — exam-generation SaaS

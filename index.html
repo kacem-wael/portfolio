@@ -263,6 +263,10 @@
   .project-showcase .showcase-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; opacity: 0; transition: opacity 0.6s, transform 0.5s cubic-bezier(0.22,1,0.36,1); filter: saturate(1.1) contrast(1.04); }
   .project-showcase .showcase-cover.loaded { opacity: 1; }
   .project-item:hover .showcase-cover.loaded { transform: scale(1.06); }
+  /* Portrait media (e.g. a poster): show the whole image instead of cropping it */
+  .project-showcase.fit-contain { min-height: 640px; }
+  .project-showcase.fit-contain .showcase-cover { object-fit: contain; padding: 1.6rem; filter: none; }
+  .project-item:hover .project-showcase.fit-contain .showcase-cover.loaded { transform: scale(1.02); }
   .project-showcase.has-cover .showcase-mono, .project-showcase.has-cover .showcase-label, .project-showcase.has-cover .showcase-tags { display: none; }
   .project-showcase.has-cover::after { opacity: 0; }
   .project-showcase.has-cover::before { content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,0.05), transparent 28%, rgba(0,0,0,0.45)); }
@@ -396,6 +400,7 @@
     section { padding: 5rem 0 3rem; }
     .project-item, .project-item.reverse { grid-template-columns: 1fr; direction: ltr; min-height: 0; }
     .project-showcase { min-height: 300px; order: -1; }
+    .project-showcase.fit-contain { min-height: 520px; }
     .project-info { padding: 2rem; }
     .stack-grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); }
     .hero-stats { gap: 2rem; }
@@ -442,16 +447,16 @@
        data-en="Software Engineering Student &middot; <span>Data Science &amp; Computer Vision Engineer</span>"
        data-fr="Élève Ingénieur en Informatique &middot; <span>Data Science &amp; Vision par Ordinateur</span>">Software Engineering Student &middot; <span>Data Science &amp; Computer Vision Engineer</span></p>
     <p class="hero-desc"
-       data-en="Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping a real ML solution for a real client. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship three products now in production (Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices)."
-       data-fr="Élève ingénieur en informatique à l'<strong>ENSI</strong>, désormais spécialisé en <strong>Data Science &amp; Vision par Ordinateur</strong> — je transforme des données réelles et complexes, et des pixels bruts, en produits intelligents. Mon projet phare, <strong>EcoNexus</strong>, combine machine learning, graphes de connaissances et recherche vectorielle pour orienter les décisions d'investissement sur des milliers d'actions, et j'ai passé l'été 2026 comme <strong>stagiaire data scientist chez Warp Analytics</strong>, où j'ai livré une vraie solution ML pour un client réel. Ma force : je suis aussi ingénieur full-stack — je ne me contente pas de prototyper des modèles, je les mets en production, comme j'ai contribué à livrer trois produits aujourd'hui en production (Clinika, ExamBuilder et une application de stock &amp; facturation avec plus de 1 000 factures réelles).">Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping a real ML solution for a real client. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship three products now in production (Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices).</p>
+       data-en="Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. I'm driven by <strong>artificial intelligence</strong> — deep learning, computer vision and models that can be trusted, especially in medicine: I built a 3D-CNN pipeline that diagnoses Alzheimer's disease from MRI + PET brain scans (<strong>0.96 AUC</strong>) and a morphology-based system that segments and counts blood cells. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping a real ML solution for a real client. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship three products now in production (Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices)."
+       data-fr="Élève ingénieur en informatique à l'<strong>ENSI</strong>, désormais spécialisé en <strong>Data Science &amp; Vision par Ordinateur</strong> — je transforme des données réelles et complexes, et des pixels bruts, en produits intelligents. Je suis passionné par l'<strong>intelligence artificielle</strong> — deep learning, vision par ordinateur et modèles dignes de confiance, notamment en médecine : j'ai conçu un pipeline de CNN 3D qui diagnostique la maladie d'Alzheimer à partir d'IRM + TEP cérébrales (<strong>AUC 0,96</strong>) et un système fondé sur la morphologie mathématique qui segmente et compte les cellules sanguines. Mon projet phare, <strong>EcoNexus</strong>, combine machine learning, graphes de connaissances et recherche vectorielle pour orienter les décisions d'investissement sur des milliers d'actions, et j'ai passé l'été 2026 comme <strong>stagiaire data scientist chez Warp Analytics</strong>, où j'ai livré une vraie solution ML pour un client réel. Ma force : je suis aussi ingénieur full-stack — je ne me contente pas de prototyper des modèles, je les mets en production, comme j'ai contribué à livrer trois produits aujourd'hui en production (Clinika, ExamBuilder et une application de stock &amp; facturation avec plus de 1 000 factures réelles).">Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. I'm driven by <strong>artificial intelligence</strong> — deep learning, computer vision and models that can be trusted, especially in medicine: I built a 3D-CNN pipeline that diagnoses Alzheimer's disease from MRI + PET brain scans (<strong>0.96 AUC</strong>) and a morphology-based system that segments and counts blood cells. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping a real ML solution for a real client. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship three products now in production (Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices).</p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary" data-en="View Projects &rarr;" data-fr="Voir les projets &rarr;">View Projects &rarr;</a>
       <a href="#contact" class="btn btn-ghost" data-en="Contact Me" data-fr="Me contacter">Contact Me</a>
-      <a href="Wael_KACEM_CV_ENG.pdf" download class="btn btn-ghost" data-en="Download CV" data-fr="Télécharger le CV">Download CV</a>
+      <a href="CV_WAEL_KACEM.pdf" download class="btn btn-ghost" data-en="Download CV" data-fr="Télécharger le CV">Download CV</a>
     </div>
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num">8<span>+</span></div>
+        <div class="hero-stat-num">10<span>+</span></div>
         <div class="hero-stat-label" data-en="Projects built" data-fr="Projets réalisés">Projects built</div>
       </div>
       <div>
@@ -495,7 +500,7 @@
         <div class="screen-dot yellow"></div>
         <div class="screen-dot green"></div>
         <span style="font-size:11px;color:var(--muted);margin-left:8px;letter-spacing:.05em;">wael@portfolio ~ tech-stack</span>
-        <span style="margin-left:auto;font-size:10px;color:var(--muted)" id="stack-count">32 technologies</span>
+        <span style="margin-left:auto;font-size:10px;color:var(--muted)" id="stack-count">37 technologies</span>
       </div>
 
       <div class="stack-grid" id="stack-grid">
@@ -524,6 +529,31 @@
           <div class="stack-logo" style="background:#1d1000;color:#ff6f00;font-family:var(--font-sans);font-size:17px">TF</div>
           <div class="stack-name">TensorFlow</div>
           <div class="stack-category-tag" style="background:rgba(255,111,0,0.15);color:#ff6f00">ML</div>
+        </div>
+        <div class="stack-item" data-cat="data" style="--item-color:rgba(92,157,255,0.14)">
+          <div class="stack-logo" style="background:#0f0f14;color:#5c9dff;font-family:var(--font-sans);font-size:11px;line-height:1.1;text-align:center">OpenCV</div>
+          <div class="stack-name">OpenCV</div>
+          <div class="stack-category-tag" style="background:rgba(92,157,255,0.15);color:#5c9dff">CV</div>
+        </div>
+        <div class="stack-item" data-cat="data" style="--item-color:rgba(245,167,66,0.14)">
+          <div class="stack-logo" style="background:#0f0f14;color:#f5a742;font-family:var(--font-sans);font-size:11px;line-height:1.1;text-align:center">scikit<br>image</div>
+          <div class="stack-name">scikit-image</div>
+          <div class="stack-category-tag" style="background:rgba(245,167,66,0.15);color:#f5a742">CV</div>
+        </div>
+        <div class="stack-item" data-cat="data" style="--item-color:rgba(0,179,155,0.14)">
+          <div class="stack-logo" style="background:#0f0f14;color:#00b39b;font-family:var(--font-sans);font-size:11px;line-height:1.1;text-align:center">MONAI</div>
+          <div class="stack-name">MONAI</div>
+          <div class="stack-category-tag" style="background:rgba(0,179,155,0.15);color:#00b39b">CV</div>
+        </div>
+        <div class="stack-item" data-cat="data" style="--item-color:rgba(63,169,245,0.14)">
+          <div class="stack-logo" style="background:#0f0f14;color:#3fa9f5;font-family:var(--font-sans);font-size:15px;line-height:1.1;text-align:center">XGB</div>
+          <div class="stack-name">XGBoost</div>
+          <div class="stack-category-tag" style="background:rgba(63,169,245,0.15);color:#3fa9f5">ML</div>
+        </div>
+        <div class="stack-item" data-cat="data" style="--item-color:rgba(255,61,113,0.14)">
+          <div class="stack-logo" style="background:#0f0f14;color:#ff3d71;font-family:var(--font-sans);font-size:13px;line-height:1.1;text-align:center">SHAP</div>
+          <div class="stack-name">SHAP</div>
+          <div class="stack-category-tag" style="background:rgba(255,61,113,0.15);color:#ff3d71">XAI</div>
         </div>
         <!-- Languages -->
         <div class="stack-item" data-cat="lang" style="--item-color:rgba(77,168,255,0.12)">
@@ -699,7 +729,7 @@
 
       <div class="stack-stats">
         <div class="stack-stat">
-          <div class="stack-stat-num">5</div>
+          <div class="stack-stat-num">10</div>
           <div class="stack-stat-label" data-en="Data &amp; ML" data-fr="Data &amp; ML">Data &amp; ML</div>
         </div>
         <div class="stack-stat">
@@ -751,10 +781,35 @@
       <div class="skill-group">
         <div class="skill-group-title" data-en="Computer Vision" data-fr="Vision par Ordinateur">Computer Vision</div>
         <div class="skill-tags">
-          <span class="tag">OpenCV</span>
+          <span class="tag">OpenCV</span><span class="tag">scikit-image</span><span class="tag">MONAI</span>
           <span class="tag" data-en="Image Processing" data-fr="Traitement d'images">Image Processing</span>
-          <span class="tag" data-en="Object Detection" data-fr="Détection d'objets">Object Detection</span>
+          <span class="tag" data-en="Image Segmentation" data-fr="Segmentation d'images">Image Segmentation</span>
           <span class="tag" data-en="Image Classification" data-fr="Classification d'images">Image Classification</span>
+          <span class="tag" data-en="Object Detection" data-fr="Détection d'objets">Object Detection</span>
+          <span class="tag" data-en="Medical Imaging (MRI / PET)" data-fr="Imagerie médicale (IRM / TEP)">Medical Imaging (MRI / PET)</span>
+          <span class="tag" data-en="Mathematical Morphology" data-fr="Morphologie mathématique">Mathematical Morphology</span>
+          <span class="tag" data-en="Watershed" data-fr="Ligne de partage des eaux">Watershed</span>
+          <span class="tag" data-en="Granulometry" data-fr="Granulométrie">Granulometry</span>
+          <span class="tag">Top-hat</span>
+          <span class="tag" data-en="Distance Transform" data-fr="Transformée en distance">Distance Transform</span>
+          <span class="tag">h-maxima</span>
+          <span class="tag" data-en="Otsu Thresholding" data-fr="Seuillage d'Otsu">Otsu Thresholding</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title" data-en="ML Algorithms &amp; Methods" data-fr="Algorithmes &amp; méthodes ML">ML Algorithms &amp; Methods</div>
+        <div class="skill-tags">
+          <span class="tag" data-en="3D CNNs (ResNet-18)" data-fr="CNN 3D (ResNet-18)">3D CNNs (ResNet-18)</span>
+          <span class="tag" data-en="Transfer Learning" data-fr="Transfert d'apprentissage">Transfer Learning</span>
+          <span class="tag" data-en="Multimodal Fusion" data-fr="Fusion multimodale">Multimodal Fusion</span>
+          <span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">SVM</span>
+          <span class="tag" data-en="Logistic Regression" data-fr="Régression logistique">Logistic Regression</span>
+          <span class="tag" data-en="SHAP Explainability" data-fr="Explicabilité SHAP">SHAP Explainability</span>
+          <span class="tag" data-en="Feature Engineering" data-fr="Ingénierie de descripteurs">Feature Engineering</span>
+          <span class="tag" data-en="Grouped Cross-Validation" data-fr="Validation croisée groupée">Grouped Cross-Validation</span>
+          <span class="tag" data-en="Bootstrap CIs &amp; McNemar" data-fr="IC bootstrap &amp; McNemar">Bootstrap CIs &amp; McNemar</span>
+          <span class="tag" data-en="Ablation Studies" data-fr="Études d'ablation">Ablation Studies</span>
+          <span class="tag" data-en="Leak-free Evaluation" data-fr="Évaluation sans fuite">Leak-free Evaluation</span>
         </div>
       </div>
       <div class="skill-group">
@@ -938,11 +993,72 @@
 
     <div class="projects-list" id="projects-list">
 
+      <!-- Nsitni -->
+      <div class="project-item" data-assets="assets/projects/nsitni">
+        <div class="project-info">
+          <div>
+            <div class="project-number" data-en="Project 01" data-fr="Projet 01">Project 01</div>
+            <div class="project-title">Nsitni</div>
+            <p class="project-desc"
+               data-en="Diagnosis and progression prediction of Alzheimer's disease from multimodal <strong>MRI + FDG-PET</strong> brain scans (ADNI, 686 patients). Compares classical ML on FreeSurfer / SUVR descriptors with <strong>3D CNNs</strong> (ResNet-18), tests early, intermediate and late fusion, and chains diagnosis (CN / MCI / AD) with prognosis — will an MCI patient convert to AD within 36 months? Leak-free patient-level split, a test set used only once, and SHAP to show which brain regions drive the decision. Reaches <strong>0.96 AUC</strong> (0.89 balanced accuracy) for AD vs CN and 0.72 for MCI conversion via transfer learning."
+               data-fr="Diagnostic et prédiction de l'évolution de la maladie d'Alzheimer à partir d'images cérébrales multimodales <strong>IRM + TEP-FDG</strong> (ADNI, 686 patients). Compare le ML classique sur descripteurs FreeSurfer / SUVR à des <strong>CNN 3D</strong> (ResNet-18), teste les fusions précoce, intermédiaire et tardive, et enchaîne diagnostic (CN / MCI / AD) et pronostic — un patient MCI évoluera-t-il vers la maladie d'Alzheimer sous 36 mois ? Découpage par patient sans fuite, jeu de test utilisé une seule fois, et SHAP pour identifier les régions cérébrales décisives. Atteint une <strong>AUC de 0,96</strong> (accuracy équilibrée 0,89) pour AD vs CN et 0,72 pour la conversion des MCI par transfert d'apprentissage.">Diagnosis and progression prediction of Alzheimer's disease from multimodal <strong>MRI + FDG-PET</strong> brain scans (ADNI, 686 patients). Compares classical ML on FreeSurfer / SUVR descriptors with <strong>3D CNNs</strong> (ResNet-18), tests early, intermediate and late fusion, and chains diagnosis (CN / MCI / AD) with prognosis — will an MCI patient convert to AD within 36 months? Leak-free patient-level split, a test set used only once, and SHAP to show which brain regions drive the decision. Reaches <strong>0.96 AUC</strong> (0.89 balanced accuracy) for AD vs CN and 0.72 for MCI conversion via transfer learning.</p>
+          </div>
+          <div>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span><span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">MONAI</span><span class="tech-badge">scikit-learn</span>
+              <span class="tech-badge">XGBoost</span><span class="tech-badge">SHAP</span>
+              <span class="tech-badge" data-en="3D CNN" data-fr="CNN 3D">3D CNN</span>
+            </div>
+            <div class="project-links-row">
+              <a href="assets/projects/nsitni/poster.pdf" target="_blank" rel="noopener" class="proj-link primary" data-en="Poster (PDF)" data-fr="Poster (PDF)">Poster (PDF)</a>
+              <span class="proj-context" data-en="Academic project &middot; team of 3" data-fr="Projet académique &middot; équipe de 3">Academic project &middot; team of 3</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-showcase fit-contain" style="--show-glow:rgba(180,142,255,0.16);--show-accent:var(--purple)">
+          <div class="showcase-mono" style="color:#b48eff">Ns</div>
+          <div class="showcase-label" data-en="Medical Imaging &middot; Deep Learning" data-fr="Imagerie médicale &middot; Deep Learning">Medical Imaging &middot; Deep Learning</div>
+          <div class="showcase-tags"><span>MRI + PET</span><span>3D CNN</span><span>Fusion</span></div>
+        </div>
+      </div>
+
+      <!-- Blood segmentation -->
+      <div class="project-item reverse" data-assets="assets/projects/Blood-segmentation">
+        <div class="project-info">
+          <div>
+            <div class="project-number" data-en="Project 02" data-fr="Projet 02">Project 02</div>
+            <div class="project-title" data-en="Blood Cell Segmentation" data-fr="Segmentation de cellules sanguines">Blood Cell Segmentation</div>
+            <p class="project-desc"
+               data-en="An automatic pipeline that segments, separates, classifies, counts and measures red cells, white cells and platelets in blood-smear images — built on <strong>mathematical morphology</strong>. Granulometry estimates the cell scale so every parameter is scale-free; a relative top-hat corrects illumination; a marker-controlled <strong>watershed</strong> segments white cells first and splits touching red cells. A random forest on 14 shape and colour features confirms each class, and robust z-scores flag abnormal cells. On the official BCCD test split: <strong>0.90 F1</strong> on white cells, 0.88 pixel Dice, 1.6 s per image on CPU, with an ablation of every operator."
+               data-fr="Un pipeline automatique qui segmente, sépare, classe, compte et mesure globules rouges, globules blancs et plaquettes dans des frottis sanguins — fondé sur la <strong>morphologie mathématique</strong>. La granulométrie estime l'échelle des cellules pour des paramètres indépendants du grossissement ; un top-hat relatif corrige l'éclairage ; une <strong>ligne de partage des eaux</strong> à marqueurs segmente d'abord les globules blancs puis sépare les globules rouges collés. Une forêt aléatoire sur 14 descripteurs de forme et de couleur confirme chaque classe, et des z-scores robustes signalent les cellules anormales. Sur le split de test officiel BCCD : <strong>F1 de 0,90</strong> sur les globules blancs, Dice pixel de 0,88, 1,6 s par image sur CPU, avec une ablation de chaque opérateur.">An automatic pipeline that segments, separates, classifies, counts and measures red cells, white cells and platelets in blood-smear images — built on <strong>mathematical morphology</strong>. Granulometry estimates the cell scale so every parameter is scale-free; a relative top-hat corrects illumination; a marker-controlled <strong>watershed</strong> segments white cells first and splits touching red cells. A random forest on 14 shape and colour features confirms each class, and robust z-scores flag abnormal cells. On the official BCCD test split: <strong>0.90 F1</strong> on white cells, 0.88 pixel Dice, 1.6 s per image on CPU, with an ablation of every operator.</p>
+          </div>
+          <div>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span><span class="tech-badge">scikit-image</span>
+              <span class="tech-badge">scikit-learn</span>
+              <span class="tech-badge" data-en="Morphology" data-fr="Morphologie">Morphology</span>
+              <span class="tech-badge">Watershed</span>
+              <span class="tech-badge">Random Forest</span>
+            </div>
+            <div class="project-links-row">
+              <a href="https://github.com/kacem-wael/Blood-segmentation-and-anomaly-detection" target="_blank" rel="noopener" class="proj-link primary" data-en="GitHub" data-fr="GitHub">GitHub</a>
+              <span class="proj-context" data-en="Academic project &middot; team of 2" data-fr="Projet académique">Academic project</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-showcase" style="--show-glow:rgba(255,122,107,0.16);--show-accent:#ff7a6b">
+          <div class="showcase-mono" style="color:#ff7a6b">Bc</div>
+          <div class="showcase-label" data-en="Computer Vision &middot; Medical" data-fr="Vision par ordinateur &middot; Médical">Computer Vision &middot; Medical</div>
+          <div class="showcase-tags"><span>Morphology</span><span>Watershed</span><span>Segmentation</span></div>
+        </div>
+      </div>
+
       <!-- EcoNexus -->
       <div class="project-item" data-assets="assets/projects/econexus">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 01" data-fr="Projet 01">Project 01</div>
+            <div class="project-number" data-en="Project 03" data-fr="Projet 03">Project 03</div>
             <div class="project-title">EcoNexus</div>
             <p class="project-desc"
                data-en="A financial-intelligence platform leveraging machine learning to analyse thousands of stocks and support investment decisions — combining a knowledge graph, vector search, and asynchronous data pipelines."
@@ -972,7 +1088,7 @@
       <div class="project-item reverse" data-assets="assets/projects/clinika">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 02" data-fr="Projet 02">Project 02</div>
+            <div class="project-number" data-en="Project 04" data-fr="Projet 04">Project 04</div>
             <div class="project-title">Clinika</div>
             <p class="project-desc"
                data-en="A SaaS management platform for dental practices — appointments, patient records, and billing — currently used in production by real clients. Built during my apprenticeship at Warp Analytics."
@@ -1002,7 +1118,7 @@
       <div class="project-item" data-assets="assets/projects/exambuilder">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 03" data-fr="Projet 03">Project 03</div>
+            <div class="project-number" data-en="Project 05" data-fr="Projet 05">Project 05</div>
             <div class="project-title">ExamBuilder</div>
             <p class="project-desc"
                data-en="A SaaS platform for automated exam creation and management built for teachers — question banks, generation, and grading workflows. Developed during my internship at DevWise."
@@ -1031,7 +1147,7 @@
       <div class="project-item reverse" data-assets="assets/projects/moove">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 04" data-fr="Projet 04">Project 04</div>
+            <div class="project-number" data-en="Project 06" data-fr="Projet 06">Project 06</div>
             <div class="project-title">Moove</div>
             <p class="project-desc"
                data-en="Moove is a sports-management application integrating coach–client communication and automatic exercise suggestions to personalise training plans. Built during my apprenticeship at Warp Analytics."
@@ -1060,7 +1176,7 @@
       <div class="project-item" data-assets="assets/projects/experthub">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 05" data-fr="Projet 05">Project 05</div>
+            <div class="project-number" data-en="Project 07" data-fr="Projet 07">Project 07</div>
             <div class="project-title">ExpertHub</div>
             <p class="project-desc"
                data-en="A marketplace platform connecting experts with users seeking advice — profiles, search, and booking. A full-stack personal project."
@@ -1087,7 +1203,7 @@
       <div class="project-item reverse" data-assets="assets/projects/stockfacturation">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 06" data-fr="Projet 06">Project 06</div>
+            <div class="project-number" data-en="Project 08" data-fr="Projet 08">Project 08</div>
             <div class="project-title">StockFacturation</div>
             <p class="project-desc"
                data-en="A desktop stock-management and invoicing application built for a freelance client and used in production every day — inventory tracking, billing, and reporting through a native WPF interface. The client has already issued over 1,000 real invoices with it."
@@ -1115,7 +1231,7 @@
       <div class="project-item" data-assets="assets/projects/compiler-c">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 07" data-fr="Projet 07">Project 07</div>
+            <div class="project-number" data-en="Project 09" data-fr="Projet 09">Project 09</div>
             <div class="project-title" data-en="Compiler in C" data-fr="Compilateur en C">Compiler in C</div>
             <p class="project-desc"
                data-en="A compiler written from scratch in C — lexical analysis, parsing, and code generation — exploring how source code is transformed into executable instructions."
@@ -1144,7 +1260,7 @@
       <div class="project-item reverse" data-assets="assets/projects/E-Uber">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 08" data-fr="Projet 08">Project 08</div>
+            <div class="project-number" data-en="Project 10" data-fr="Projet 10">Project 10</div>
             <div class="project-title">E-Uber</div>
             <p class="project-desc"
                data-en="A ride-hailing management simulation written in C — models drivers, riders and trip requests using linked lists and FIFO/LIFO queues, with all data persisted to a flat text file. An academic data-structures project (no database, no GUI)."
@@ -1338,7 +1454,7 @@
         <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=waelwaelkacem@gmail.com" class="btn btn-ghost" target="_blank" rel="noopener" data-en="Open in Gmail" data-fr="Ouvrir dans Gmail">Open in Gmail</a>
         <a href="https://github.com/kacem-wael" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/eng-wael-kacem/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="Wael_KACEM_CV_ENG.pdf" download class="btn btn-ghost" data-en="Download CV" data-fr="Télécharger le CV">Download CV</a>
+        <a href="CV_WAEL_KACEM.pdf" download class="btn btn-ghost" data-en="Download CV" data-fr="Télécharger le CV">Download CV</a>
       </div>
     </div>
   </div>
