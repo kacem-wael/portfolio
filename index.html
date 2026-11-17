@@ -1039,11 +1039,42 @@
 
     <div class="projects-list" id="projects-list">
 
-      <!-- Nsitni -->
-      <div class="project-item" data-assets="assets/projects/nsitni">
+      <!-- Digit Recognition -->
+      <div class="project-item" data-assets="assets/projects/Digit-Recognition">
         <div class="project-info">
           <div>
             <div class="project-number" data-en="Project 01" data-fr="Projet 01">Project 01</div>
+            <div class="project-title" data-en="Handwritten Digit Recognition" data-fr="Reconnaissance de chiffres manuscrits">Handwritten Digit Recognition</div>
+            <p class="project-desc"
+               data-en="Draw a digit with the mouse and an AI recognizes it in real time. While you draw, the app shows how sure it is about each digit from 0 to 9, the shape features it measured on your drawing (stroke directions, loops, end-points), and its neurons lighting up layer by layer. I wrote the neural network <strong>from scratch in NumPy</strong>, learning included, without PyTorch or TensorFlow. On <strong>10,000 test images</strong> it never saw during training, it gets <strong>99.17%</strong> right, against 49% for the classic method it started from. Each prediction takes about <strong>30 ms</strong> on an ordinary CPU."
+               data-fr="Dessinez un chiffre à la souris et une IA le reconnaît en temps réel. Pendant le dessin, l'application montre à quel point elle est sûre de chaque chiffre de 0 à 9, les caractéristiques de forme mesurées sur le tracé (directions des traits, boucles, extrémités) et ses neurones qui s'activent couche par couche. J'ai écrit le réseau de neurones <strong>de zéro en NumPy</strong>, apprentissage compris, sans PyTorch ni TensorFlow. Sur <strong>10 000 images de test</strong> jamais vues pendant l'entraînement, il a raison à <strong>99,17 %</strong>, contre 49 % pour la méthode classique de départ. Chaque prédiction prend environ <strong>30 ms</strong> sur un processeur ordinaire.">Draw a digit with the mouse and an AI recognizes it in real time. While you draw, the app shows how sure it is about each digit from 0 to 9, the shape features it measured on your drawing (stroke directions, loops, end-points), and its neurons lighting up layer by layer. I wrote the neural network <strong>from scratch in NumPy</strong>, learning included, without PyTorch or TensorFlow. On <strong>10,000 test images</strong> it never saw during training, it gets <strong>99.17%</strong> right, against 49% for the classic method it started from. Each prediction takes about <strong>30 ms</strong> on an ordinary CPU.</p>
+          </div>
+          <div>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span><span class="tech-badge">NumPy</span>
+              <span class="tech-badge">OpenCV</span><span class="tech-badge">scikit-image</span>
+              <span class="tech-badge" data-en="Neural Network (MLP)" data-fr="Réseau de neurones (MLP)">Neural Network (MLP)</span>
+              <span class="tech-badge">HOG</span>
+              <span class="tech-badge">JavaScript / Canvas</span>
+            </div>
+            <div class="project-links-row">
+              <a href="https://github.com/kacem-wael/Digit-Recognition" target="_blank" rel="noopener" class="proj-link primary" data-en="GitHub" data-fr="GitHub">GitHub</a>
+              <span class="proj-context" data-en="Personal project" data-fr="Projet personnel">Personal project</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-showcase fit-landscape" style="--show-glow:rgba(110,140,255,0.16);--show-accent:#6e8cff">
+          <div class="showcase-mono" style="color:#6e8cff">Dr</div>
+          <div class="showcase-label" data-en="Computer Vision &middot; Neural Networks" data-fr="Vision par ordinateur &middot; Réseaux de neurones">Computer Vision &middot; Neural Networks</div>
+          <div class="showcase-tags"><span>MNIST</span><span>MLP</span><span>HOG</span></div>
+        </div>
+      </div>
+
+      <!-- Nsitni -->
+      <div class="project-item reverse" data-assets="assets/projects/nsitni">
+        <div class="project-info">
+          <div>
+            <div class="project-number" data-en="Project 02" data-fr="Projet 02">Project 02</div>
             <div class="project-title">Nsitni</div>
             <p class="project-desc"
                data-en="An AI that looks at brain scans and helps detect <strong>Alzheimer's disease</strong>. It reads two kinds of scans of the same patient (MRI and PET), tells whether the brain is healthy, mildly impaired or affected by Alzheimer's, and predicts whether a patient with mild memory problems will develop the disease within 3 years. It also shows which brain regions drove each decision, so doctors can check its reasoning. Trained and tested on <strong>686 real patients</strong>, it tells Alzheimer's apart from a healthy brain with a <strong>0.96 AUC</strong> score (1.0 would be perfect)."
@@ -1070,10 +1101,10 @@
       </div>
 
       <!-- Blood segmentation -->
-      <div class="project-item reverse" data-assets="assets/projects/Blood-segmentation">
+      <div class="project-item" data-assets="assets/projects/Blood-segmentation">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 02" data-fr="Projet 02">Project 02</div>
+            <div class="project-number" data-en="Project 03" data-fr="Projet 03">Project 03</div>
             <div class="project-title" data-en="Blood Cell Segmentation" data-fr="Segmentation de cellules sanguines">Blood Cell Segmentation</div>
             <p class="project-desc"
                data-en="A program that analyses microscope images of blood and does the counting a lab technician would do by hand. It finds every red cell, white cell and platelet, separates cells that touch each other, counts and measures them, and flags cells that look abnormal. It works with classic image-processing techniques instead of a heavy AI model, so it runs on an ordinary computer. On a public test dataset it finds white cells correctly <strong>90% of the time</strong> and processes an image in <strong>1.6 seconds</strong>."
@@ -1101,10 +1132,10 @@
       </div>
 
       <!-- AI Textil (Warp Analytics internship) -->
-      <div id="project-ai-textil" class="project-item" data-assets="assets/projects/AI-Textil">
+      <div id="project-ai-textil" class="project-item reverse" data-assets="assets/projects/AI-Textil">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 03" data-fr="Projet 03">Project 03</div>
+            <div class="project-number" data-en="Project 04" data-fr="Projet 04">Project 04</div>
             <div class="project-title" data-en="AI Textil — Workforce Allocation Engine" data-fr="AI Textil — Moteur d'allocation des opérateurs">AI Textil — Workforce Allocation Engine</div>
             <p class="project-desc"
                data-en="A smart planner for a clothing factory, built on a real textile manufacturer's data and <strong>delivered to them: it is deployed and in use</strong>. Every day it decides which worker goes to which machine on a sewing line, and it rearranges the plan instantly when someone is absent. A line can only go as fast as its slowest step, so putting the right person in the right place matters. The system learns each worker's real skills from <strong>230,000 production records</strong>, then builds the plan that gets the most garments out. Tested on 121 real working days against the factory's own plans, it did as well or better <strong>87% of the time</strong> and raised output by <strong>8%</strong>. When 3 workers are absent, it keeps <strong>87% of production</strong> running, where doing nothing would stop the line."
@@ -1130,10 +1161,10 @@
       </div>
 
       <!-- EcoNexus -->
-      <div class="project-item reverse" data-assets="assets/projects/econexus">
+      <div class="project-item" data-assets="assets/projects/econexus">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 04" data-fr="Projet 04">Project 04</div>
+            <div class="project-number" data-en="Project 05" data-fr="Projet 05">Project 05</div>
             <div class="project-title">EcoNexus</div>
             <p class="project-desc"
                data-en="A platform that helps people decide where to invest. It follows <strong>thousands of stocks</strong>, collects market data about them automatically, and uses machine learning to support investment decisions. It also maps how companies, sectors and events are linked, so you can understand why a stock moves, not just that it moves."
@@ -1160,10 +1191,10 @@
       </div>
 
       <!-- Clinika -->
-      <div id="project-clinika" class="project-item" data-assets="assets/projects/clinika">
+      <div id="project-clinika" class="project-item reverse" data-assets="assets/projects/clinika">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 05" data-fr="Projet 05">Project 05</div>
+            <div class="project-number" data-en="Project 06" data-fr="Projet 06">Project 06</div>
             <div class="project-title">Clinika</div>
             <p class="project-desc"
                data-en="An online app that runs a dental practice: appointments, patient files and billing in one place. It is <strong>used by real dental clinics</strong> today. Built during my apprenticeship at Warp Analytics."
@@ -1190,10 +1221,10 @@
       </div>
 
       <!-- ExamBuilder -->
-      <div id="project-exambuilder" class="project-item reverse" data-assets="assets/projects/exambuilder">
+      <div id="project-exambuilder" class="project-item" data-assets="assets/projects/exambuilder">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 06" data-fr="Projet 06">Project 06</div>
+            <div class="project-number" data-en="Project 07" data-fr="Projet 07">Project 07</div>
             <div class="project-title">ExamBuilder</div>
             <p class="project-desc"
                data-en="A website that helps teachers create exams quickly. Teachers store their questions in a bank, generate a full exam in a few clicks, and manage grading in the same place. Built during my internship at DevWise."
@@ -1219,10 +1250,10 @@
       </div>
 
       <!-- Moove -->
-      <div class="project-item" data-assets="assets/projects/moove">
+      <div class="project-item reverse" data-assets="assets/projects/moove">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 07" data-fr="Projet 07">Project 07</div>
+            <div class="project-number" data-en="Project 08" data-fr="Projet 08">Project 08</div>
             <div class="project-title">Moove</div>
             <p class="project-desc"
                data-en="A fitness app that connects sports coaches with their clients. Coaches and clients talk to each other in the app, and it suggests exercises automatically to build a training plan that fits each person. Built during my apprenticeship at Warp Analytics."
@@ -1248,10 +1279,10 @@
       </div>
 
       <!-- ExpertHub -->
-      <div class="project-item reverse" data-assets="assets/projects/experthub">
+      <div class="project-item" data-assets="assets/projects/experthub">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 08" data-fr="Projet 08">Project 08</div>
+            <div class="project-number" data-en="Project 09" data-fr="Projet 09">Project 09</div>
             <div class="project-title">ExpertHub</div>
             <p class="project-desc"
                data-en="A website that connects people who need advice with experts who can give it. Experts create a profile, users search for the right person and book a session. A personal project I built from start to finish."
@@ -1275,10 +1306,10 @@
       </div>
 
       <!-- StockFacturation -->
-      <div id="project-stockfacturation" class="project-item" data-assets="assets/projects/stockfacturation">
+      <div id="project-stockfacturation" class="project-item reverse" data-assets="assets/projects/stockfacturation">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 09" data-fr="Projet 09">Project 09</div>
+            <div class="project-number" data-en="Project 10" data-fr="Projet 10">Project 10</div>
             <div class="project-title">StockFacturation</div>
             <p class="project-desc"
                data-en="A computer program that lets a business track its stock and create invoices. Built for a real client who uses it every day, and who has already issued <strong>more than 1,000 real invoices</strong> with it."
@@ -1303,10 +1334,10 @@
       </div>
 
       <!-- Compiler -->
-      <div class="project-item reverse" data-assets="assets/projects/compiler-c">
+      <div class="project-item" data-assets="assets/projects/compiler-c">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 10" data-fr="Projet 10">Project 10</div>
+            <div class="project-number" data-en="Project 11" data-fr="Projet 11">Project 11</div>
             <div class="project-title" data-en="Compiler in C" data-fr="Compilateur en C">Compiler in C</div>
             <p class="project-desc"
                data-en="A program, written from scratch, that translates code written by a person into instructions a computer can run. I built it to understand how programming languages work under the hood."
@@ -1332,10 +1363,10 @@
       </div>
 
       <!-- E-Uber -->
-      <div class="project-item" data-assets="assets/projects/E-Uber">
+      <div class="project-item reverse" data-assets="assets/projects/E-Uber">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 11" data-fr="Projet 11">Project 11</div>
+            <div class="project-number" data-en="Project 12" data-fr="Projet 12">Project 12</div>
             <div class="project-title">E-Uber</div>
             <p class="project-desc"
                data-en="A small simulation of a ride-hailing service like a taxi app: it manages drivers, passengers and ride requests, and saves everything to a file. A university project about organising data efficiently."
