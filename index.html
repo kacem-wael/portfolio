@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Wael KACEM - computer-science engineering student at ENSI, specializing in Data Science & Computer Vision. Full-stack engineer with three products shipped to production.">
+<meta name="description" content="Wael KACEM - computer-science engineering student at ENSI, specializing in Data Science & Computer Vision. Full-stack engineer with four products shipped to production.">
 <meta name="author" content="Wael KACEM">
 <meta name="theme-color" content="#0d0a14">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Wael KACEM — Data Science &amp; Computer Vision Engineer">
-<meta property="og:description" content="Wael KACEM - computer-science engineering student at ENSI, specializing in Data Science & Computer Vision. Full-stack engineer with three products shipped to production.">
+<meta property="og:description" content="Wael KACEM - computer-science engineering student at ENSI, specializing in Data Science & Computer Vision. Full-stack engineer with four products shipped to production.">
 <meta property="og:url" content="https://kacem-wael.github.io/portfolio/">
 <meta property="og:image" content="https://kacem-wael.github.io/portfolio/assets/personal-picture.png">
 <meta property="og:image:alt" content="Portrait of Wael KACEM">
 <meta property="og:site_name" content="Wael KACEM">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Wael KACEM — Data Science &amp; Computer Vision Engineer">
-<meta name="twitter:description" content="Wael KACEM - computer-science engineering student at ENSI, specializing in Data Science & Computer Vision. Full-stack engineer with three products shipped to production.">
+<meta name="twitter:description" content="Wael KACEM - computer-science engineering student at ENSI, specializing in Data Science & Computer Vision. Full-stack engineer with four products shipped to production.">
 <meta name="twitter:image" content="https://kacem-wael.github.io/portfolio/assets/personal-picture.png">
 <link rel="canonical" href="https://kacem-wael.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 64 64&apos;%3E%3Crect width=&apos;64&apos; height=&apos;64&apos; rx=&apos;14&apos; fill=&apos;%230d0a14&apos;/%3E%3Ctext x=&apos;50%25&apos; y=&apos;52&apos; font-family=&apos;Georgia,serif&apos; font-size=&apos;38&apos; font-weight=&apos;700&apos; fill=&apos;%23ffc078&apos; text-anchor=&apos;middle&apos;%3EW%3C/text%3E%3C/svg%3E">
@@ -187,6 +187,28 @@
   .hero-stat-num { font-family: var(--serif); font-size: 2.3rem; font-weight: 500; color: var(--ink); line-height: 1; }
   .hero-stat-num span { background: var(--grad-warm); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .hero-stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin-top: 8px; }
+  /* "i" button on a hero stat: hover (or tap/focus) shows which products it counts */
+  .hero-stat-row { position: relative; display: flex; align-items: center; gap: 7px; margin-top: 8px; }
+  .hero-stat-row .hero-stat-label { margin-top: 0; }
+  .stat-info { width: 17px; height: 17px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: transparent; color: var(--gold); font: 700 10px/1 var(--sans); cursor: help; display: inline-flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s; }
+  .stat-info:hover, .stat-info:focus-visible { background: var(--gold); color: #2a1206; outline: none; }
+  .stat-tip { position: fixed; top: 0; left: 0; z-index: 1000; width: max-content; min-width: 210px; max-width: calc(100vw - 32px); padding: 0.85rem 1.05rem; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--stroke-strong); box-shadow: 0 18px 40px -16px rgba(0,0,0,0.85); opacity: 0; visibility: hidden; transition: opacity 0.2s, transform 0.2s, visibility 0.2s; }
+  .stat-tip.below { transform: translateY(-4px); }
+  .stat-tip.above { transform: translateY(4px); }
+  .stat-tip.open { opacity: 1; visibility: visible; transform: none; }
+  /* invisible bridge over the 10px gap so the box stays open while the pointer moves onto it */
+  .stat-tip::after { content: ''; position: absolute; left: 0; right: 0; height: 12px; }
+  .stat-tip.below::after { bottom: 100%; }
+  .stat-tip.above::after { top: 100%; }
+  .stat-tip-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 0.5rem; }
+  .stat-tip ul { list-style: none; margin: 0; padding: 0; }
+  .stat-tip li { font-size: 13px; padding: 2px 0 2px 14px; position: relative; text-transform: none; letter-spacing: 0; }
+  .stat-tip a { color: var(--ink); text-decoration: none; display: inline-block; padding: 3px 0; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .stat-tip a:hover, .stat-tip a:focus-visible { color: var(--gold); border-bottom-color: var(--gold); outline: none; }
+  .stat-tip a::after { content: ' \2192'; opacity: 0; transition: opacity 0.2s; }
+  .stat-tip a:hover::after, .stat-tip a:focus-visible::after { opacity: 1; }
+  .project-item { scroll-margin-top: 90px; }
+  .stat-tip li::before { content: ''; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: var(--grad-warm); }
 
   /* ===================== SECTION HEADERS ===================== */
   .section-header { display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 3rem; }
@@ -267,6 +289,9 @@
   .project-showcase.fit-contain { min-height: 640px; }
   .project-showcase.fit-contain .showcase-cover { object-fit: contain; padding: 1.6rem; filter: none; }
   .project-item:hover .project-showcase.fit-contain .showcase-cover.loaded { transform: scale(1.02); }
+  /* Landscape media with text in it (e.g. an animated demo GIF): show it whole, no cropping */
+  .project-showcase.fit-landscape .showcase-cover { object-fit: contain; filter: none; background: #0f1720; }
+  .project-item:hover .project-showcase.fit-landscape .showcase-cover.loaded { transform: scale(1.02); }
   .project-showcase.has-cover .showcase-mono, .project-showcase.has-cover .showcase-label, .project-showcase.has-cover .showcase-tags { display: none; }
   .project-showcase.has-cover::after { opacity: 0; }
   .project-showcase.has-cover::before { content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,0.05), transparent 28%, rgba(0,0,0,0.45)); }
@@ -315,6 +340,13 @@
   .timeline-date { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
   .timeline-desc { color: var(--text); font-size: 15px; line-height: 1.85; margin-top: 0.7rem; font-weight: 300; }
   .timeline-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 1.1rem; }
+  /* Experience card with a document beside it (e.g. internship certificate) */
+  .timeline-card.has-side { display: grid; grid-template-columns: 1fr 170px; gap: 0 1.8rem; align-items: start; }
+  .timeline-side { grid-column: 2; grid-row: 1 / span 10; margin: 0; cursor: zoom-in; border-radius: 10px; overflow: hidden; border: 1px solid var(--stroke); background: #fff; transition: transform 0.3s, box-shadow 0.3s; }
+  .timeline-side:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(0,0,0,0.8); }
+  .timeline-side img { display: block; width: 100%; height: auto; }
+  .timeline-side figcaption { font-size: 11px; color: var(--muted); text-align: center; padding: 6px 4px; background: var(--surface-2); }
+  .timeline-card.has-side > :not(.timeline-side) { grid-column: 1; }
   .chip { font-size: 11px; padding: 4px 11px; border-radius: 100px; background: var(--surface-2); color: var(--violet); border: 1px solid rgba(192,140,255,0.25); }
 
   /* ===================== EVENTS (photo-forward tiles) ===================== */
@@ -401,6 +433,7 @@
     .project-item, .project-item.reverse { grid-template-columns: 1fr; direction: ltr; min-height: 0; }
     .project-showcase { min-height: 300px; order: -1; }
     .project-showcase.fit-contain { min-height: 520px; }
+    .timeline-card.has-side { grid-template-columns: 1fr 110px; gap: 0 1rem; }
     .project-info { padding: 2rem; }
     .stack-grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); }
     .hero-stats { gap: 2rem; }
@@ -447,8 +480,8 @@
        data-en="Software Engineering Student &middot; <span>Data Science &amp; Computer Vision Engineer</span>"
        data-fr="Élève Ingénieur en Informatique &middot; <span>Data Science &amp; Vision par Ordinateur</span>">Software Engineering Student &middot; <span>Data Science &amp; Computer Vision Engineer</span></p>
     <p class="hero-desc"
-       data-en="Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. I'm driven by <strong>artificial intelligence</strong> — deep learning, computer vision and models that can be trusted, especially in medicine: I built a 3D-CNN pipeline that diagnoses Alzheimer's disease from MRI + PET brain scans (<strong>0.96 AUC</strong>) and a morphology-based system that segments and counts blood cells. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping a real ML solution for a real client. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship three products now in production (Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices)."
-       data-fr="Élève ingénieur en informatique à l'<strong>ENSI</strong>, désormais spécialisé en <strong>Data Science &amp; Vision par Ordinateur</strong> — je transforme des données réelles et complexes, et des pixels bruts, en produits intelligents. Je suis passionné par l'<strong>intelligence artificielle</strong> — deep learning, vision par ordinateur et modèles dignes de confiance, notamment en médecine : j'ai conçu un pipeline de CNN 3D qui diagnostique la maladie d'Alzheimer à partir d'IRM + TEP cérébrales (<strong>AUC 0,96</strong>) et un système fondé sur la morphologie mathématique qui segmente et compte les cellules sanguines. Mon projet phare, <strong>EcoNexus</strong>, combine machine learning, graphes de connaissances et recherche vectorielle pour orienter les décisions d'investissement sur des milliers d'actions, et j'ai passé l'été 2026 comme <strong>stagiaire data scientist chez Warp Analytics</strong>, où j'ai livré une vraie solution ML pour un client réel. Ma force : je suis aussi ingénieur full-stack — je ne me contente pas de prototyper des modèles, je les mets en production, comme j'ai contribué à livrer trois produits aujourd'hui en production (Clinika, ExamBuilder et une application de stock &amp; facturation avec plus de 1 000 factures réelles).">Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. I'm driven by <strong>artificial intelligence</strong> — deep learning, computer vision and models that can be trusted, especially in medicine: I built a 3D-CNN pipeline that diagnoses Alzheimer's disease from MRI + PET brain scans (<strong>0.96 AUC</strong>) and a morphology-based system that segments and counts blood cells. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping a real ML solution for a real client. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship three products now in production (Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices).</p>
+       data-en="Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. I'm driven by <strong>artificial intelligence</strong> — deep learning, computer vision and models that can be trusted, especially in medicine: I built a 3D-CNN pipeline that diagnoses Alzheimer's disease from MRI + PET brain scans (<strong>0.96 AUC</strong>) and a morphology-based system that segments and counts blood cells. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping <strong>AI Textil</strong>, an ML solution built on a garment manufacturer's real data and now deployed at their factory. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship four products now in production (AI Textil, Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices)."
+       data-fr="Élève ingénieur en informatique à l'<strong>ENSI</strong>, désormais spécialisé en <strong>Data Science &amp; Vision par Ordinateur</strong> — je transforme des données réelles et complexes, et des pixels bruts, en produits intelligents. Je suis passionné par l'<strong>intelligence artificielle</strong> — deep learning, vision par ordinateur et modèles dignes de confiance, notamment en médecine : j'ai conçu un pipeline de CNN 3D qui diagnostique la maladie d'Alzheimer à partir d'IRM + TEP cérébrales (<strong>AUC 0,96</strong>) et un système fondé sur la morphologie mathématique qui segmente et compte les cellules sanguines. Mon projet phare, <strong>EcoNexus</strong>, combine machine learning, graphes de connaissances et recherche vectorielle pour orienter les décisions d'investissement sur des milliers d'actions, et j'ai passé l'été 2026 comme <strong>stagiaire data scientist chez Warp Analytics</strong>, où j'ai livré <strong>AI Textil</strong>, une solution ML construite sur les données réelles d'un fabricant textile et aujourd'hui déployée dans son usine. Ma force : je suis aussi ingénieur full-stack — je ne me contente pas de prototyper des modèles, je les mets en production, comme j'ai contribué à livrer quatre produits aujourd'hui en production (AI Textil, Clinika, ExamBuilder et une application de stock &amp; facturation avec plus de 1 000 factures réelles).">Computer-science engineering student at <strong>ENSI</strong>, now specializing in <strong>Data Science &amp; Computer Vision</strong> — turning messy, real-world data and raw pixels into intelligent products. I'm driven by <strong>artificial intelligence</strong> — deep learning, computer vision and models that can be trusted, especially in medicine: I built a 3D-CNN pipeline that diagnoses Alzheimer's disease from MRI + PET brain scans (<strong>0.96 AUC</strong>) and a morphology-based system that segments and counts blood cells. My flagship, <strong>EcoNexus</strong>, combines machine learning, knowledge graphs and vector search to guide investment decisions across thousands of stocks, and I spent summer 2026 as a <strong>data-science intern at Warp Analytics</strong>, shipping <strong>AI Textil</strong>, an ML solution built on a garment manufacturer's real data and now deployed at their factory. My edge: I'm also a full-stack engineer — I don't just prototype models, I ship them, the way I helped ship four products now in production (AI Textil, Clinika, ExamBuilder, and a stock &amp; invoicing app with 1,000+ real invoices).</p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary" data-en="View Projects &rarr;" data-fr="Voir les projets &rarr;">View Projects &rarr;</a>
       <a href="#contact" class="btn btn-ghost" data-en="Contact Me" data-fr="Me contacter">Contact Me</a>
@@ -464,8 +497,20 @@
         <div class="hero-stat-label" data-en="Internships" data-fr="Stages / Alternances">Internships</div>
       </div>
       <div>
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label" data-en="Products in production" data-fr="Produits en production">Products in production</div>
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-row">
+          <div class="hero-stat-label" data-en="Products in production" data-fr="Produits en production">Products in production</div>
+          <button type="button" class="stat-info" aria-expanded="false" aria-controls="prod-tip" aria-label="Products in production: details">i</button>
+          <div class="stat-tip below" id="prod-tip">
+            <div class="stat-tip-title" data-en="Live today" data-fr="En production aujourd'hui">Live today</div>
+            <ul>
+              <li><a href="#project-ai-textil">AI Textil</a></li>
+              <li><a href="#project-clinika">Clinika</a></li>
+              <li><a href="#project-exambuilder">ExamBuilder</a></li>
+              <li><a href="#project-stockfacturation" data-en="Stock &amp; invoicing app" data-fr="Application stock &amp; facturation">Stock &amp; invoicing app</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div>
         <div class="hero-stat-num">267<span>/1800</span></div>
@@ -930,19 +975,20 @@
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-card" data-assets="assets/experience/warp-data-science">
+        <div class="timeline-card" data-assets="assets/experience/warp-data-science" data-side-en="Internship certificate" data-side-fr="Attestation de stage">
           <div class="timeline-meta">
-            <span class="timeline-title" data-en="Data Scientist — Internship" data-fr="Data Scientist — Stage">Data Scientist — Internship</span>
+            <span class="timeline-title" data-en="Data Scientist &amp; ML Engineer — Internship" data-fr="Data Scientist &amp; ML Engineer — Stage">Data Scientist &amp; ML Engineer — Internship</span>
             <span class="timeline-org">Warp Analytics</span>
             <span class="timeline-date" data-en="Jul — Aug 2026 &middot; 2 months" data-fr="Juil. — Août 2026 &middot; 2 mois">Jul — Aug 2026 &middot; 2 months</span>
           </div>
           <p class="timeline-desc"
-             data-en="Built a real, production-bound <strong>data-science solution for an actual client</strong> — data pipelines, modelling and analysis that fed directly into the product."
-             data-fr="Développement d'une <strong>solution data-science destinée à la production pour un client réel</strong> — pipelines de données, modélisation et analyses intégrées directement au produit.">Built a real, production-bound <strong>data-science solution for an actual client</strong> — data pipelines, modelling and analysis that fed directly into the product.</p>
+             data-en="Built <strong>AI Textil</strong>, a workforce-allocation engine for a garment manufacturer: an ML skill model with uncertainty over <strong>230k production records</strong>, daily <strong>CP-SAT</strong> line balancing and real-time repair when operators are absent. <strong>+8.0% throughput</strong> vs the factory's real dispatch in a 121-day walk-forward backtest, and it surfaced that 42% of stations depended on a single qualified person. <strong>Delivered to the client and deployed in production.</strong>"
+             data-fr="Conception d'<strong>AI Textil</strong>, un moteur d'allocation des opérateurs pour un fabricant textile : un modèle ML de compétences avec incertitude sur <strong>230 000 enregistrements de production</strong>, un équilibrage quotidien de ligne avec <strong>CP-SAT</strong> et une réparation temps réel en cas d'absences. <strong>+8,0 % de débit</strong> face à l'affectation réelle de l'usine sur un backtest walk-forward de 121 jours, et mise en évidence que 42 % des postes dépendaient d'une seule personne qualifiée. <strong>Livré au client et déployé en production.</strong>">Built <strong>AI Textil</strong>, a workforce-allocation engine for a garment manufacturer: an ML skill model with uncertainty over <strong>230k production records</strong>, daily <strong>CP-SAT</strong> line balancing and real-time repair when operators are absent. <strong>+8.0% throughput</strong> vs the factory's real dispatch in a 121-day walk-forward backtest, and it surfaced that 42% of stations depended on a single qualified person. <strong>Delivered to the client and deployed in production.</strong></p>
           <div class="timeline-chips">
-            <span class="chip">Python</span><span class="chip">Data Science</span>
-            <span class="chip">Machine Learning</span><span class="chip" data-en="Data Analysis" data-fr="Analyse de données">Data Analysis</span>
-            <span class="chip">AWS</span>
+            <span class="chip">Python</span><span class="chip">pandas</span>
+            <span class="chip">scikit-learn</span><span class="chip">OR-Tools (CP-SAT)</span>
+            <span class="chip">Machine Learning</span><span class="chip" data-en="Optimization" data-fr="Optimisation">Optimization</span>
+            <span class="chip">MariaDB</span>
           </div>
         </div>
       </div>
@@ -1000,8 +1046,8 @@
             <div class="project-number" data-en="Project 01" data-fr="Projet 01">Project 01</div>
             <div class="project-title">Nsitni</div>
             <p class="project-desc"
-               data-en="Diagnosis and progression prediction of Alzheimer's disease from multimodal <strong>MRI + FDG-PET</strong> brain scans (ADNI, 686 patients). Compares classical ML on FreeSurfer / SUVR descriptors with <strong>3D CNNs</strong> (ResNet-18), tests early, intermediate and late fusion, and chains diagnosis (CN / MCI / AD) with prognosis — will an MCI patient convert to AD within 36 months? Leak-free patient-level split, a test set used only once, and SHAP to show which brain regions drive the decision. Reaches <strong>0.96 AUC</strong> (0.89 balanced accuracy) for AD vs CN and 0.72 for MCI conversion via transfer learning."
-               data-fr="Diagnostic et prédiction de l'évolution de la maladie d'Alzheimer à partir d'images cérébrales multimodales <strong>IRM + TEP-FDG</strong> (ADNI, 686 patients). Compare le ML classique sur descripteurs FreeSurfer / SUVR à des <strong>CNN 3D</strong> (ResNet-18), teste les fusions précoce, intermédiaire et tardive, et enchaîne diagnostic (CN / MCI / AD) et pronostic — un patient MCI évoluera-t-il vers la maladie d'Alzheimer sous 36 mois ? Découpage par patient sans fuite, jeu de test utilisé une seule fois, et SHAP pour identifier les régions cérébrales décisives. Atteint une <strong>AUC de 0,96</strong> (accuracy équilibrée 0,89) pour AD vs CN et 0,72 pour la conversion des MCI par transfert d'apprentissage.">Diagnosis and progression prediction of Alzheimer's disease from multimodal <strong>MRI + FDG-PET</strong> brain scans (ADNI, 686 patients). Compares classical ML on FreeSurfer / SUVR descriptors with <strong>3D CNNs</strong> (ResNet-18), tests early, intermediate and late fusion, and chains diagnosis (CN / MCI / AD) with prognosis — will an MCI patient convert to AD within 36 months? Leak-free patient-level split, a test set used only once, and SHAP to show which brain regions drive the decision. Reaches <strong>0.96 AUC</strong> (0.89 balanced accuracy) for AD vs CN and 0.72 for MCI conversion via transfer learning.</p>
+               data-en="An AI that looks at brain scans and helps detect <strong>Alzheimer's disease</strong>. It reads two kinds of scans of the same patient (MRI and PET), tells whether the brain is healthy, mildly impaired or affected by Alzheimer's, and predicts whether a patient with mild memory problems will develop the disease within 3 years. It also shows which brain regions drove each decision, so doctors can check its reasoning. Trained and tested on <strong>686 real patients</strong>, it tells Alzheimer's apart from a healthy brain with a <strong>0.96 AUC</strong> score (1.0 would be perfect)."
+               data-fr="Une IA qui analyse des images du cerveau pour aider à détecter la <strong>maladie d'Alzheimer</strong>. Elle lit deux types d'examens d'un même patient (IRM et TEP), indique si le cerveau est sain, légèrement atteint ou touché par la maladie, et prédit si un patient aux troubles de mémoire légers développera la maladie dans les 3 ans. Elle montre aussi quelles régions du cerveau ont guidé chaque décision, pour que les médecins puissent vérifier son raisonnement. Entraînée et testée sur <strong>686 patients réels</strong>, elle distingue la maladie d'un cerveau sain avec un score <strong>AUC de 0,96</strong> (1,0 serait parfait).">An AI that looks at brain scans and helps detect <strong>Alzheimer's disease</strong>. It reads two kinds of scans of the same patient (MRI and PET), tells whether the brain is healthy, mildly impaired or affected by Alzheimer's, and predicts whether a patient with mild memory problems will develop the disease within 3 years. It also shows which brain regions drove each decision, so doctors can check its reasoning. Trained and tested on <strong>686 real patients</strong>, it tells Alzheimer's apart from a healthy brain with a <strong>0.96 AUC</strong> score (1.0 would be perfect).</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1030,8 +1076,8 @@
             <div class="project-number" data-en="Project 02" data-fr="Projet 02">Project 02</div>
             <div class="project-title" data-en="Blood Cell Segmentation" data-fr="Segmentation de cellules sanguines">Blood Cell Segmentation</div>
             <p class="project-desc"
-               data-en="An automatic pipeline that segments, separates, classifies, counts and measures red cells, white cells and platelets in blood-smear images — built on <strong>mathematical morphology</strong>. Granulometry estimates the cell scale so every parameter is scale-free; a relative top-hat corrects illumination; a marker-controlled <strong>watershed</strong> segments white cells first and splits touching red cells. A random forest on 14 shape and colour features confirms each class, and robust z-scores flag abnormal cells. On the official BCCD test split: <strong>0.90 F1</strong> on white cells, 0.88 pixel Dice, 1.6 s per image on CPU, with an ablation of every operator."
-               data-fr="Un pipeline automatique qui segmente, sépare, classe, compte et mesure globules rouges, globules blancs et plaquettes dans des frottis sanguins — fondé sur la <strong>morphologie mathématique</strong>. La granulométrie estime l'échelle des cellules pour des paramètres indépendants du grossissement ; un top-hat relatif corrige l'éclairage ; une <strong>ligne de partage des eaux</strong> à marqueurs segmente d'abord les globules blancs puis sépare les globules rouges collés. Une forêt aléatoire sur 14 descripteurs de forme et de couleur confirme chaque classe, et des z-scores robustes signalent les cellules anormales. Sur le split de test officiel BCCD : <strong>F1 de 0,90</strong> sur les globules blancs, Dice pixel de 0,88, 1,6 s par image sur CPU, avec une ablation de chaque opérateur.">An automatic pipeline that segments, separates, classifies, counts and measures red cells, white cells and platelets in blood-smear images — built on <strong>mathematical morphology</strong>. Granulometry estimates the cell scale so every parameter is scale-free; a relative top-hat corrects illumination; a marker-controlled <strong>watershed</strong> segments white cells first and splits touching red cells. A random forest on 14 shape and colour features confirms each class, and robust z-scores flag abnormal cells. On the official BCCD test split: <strong>0.90 F1</strong> on white cells, 0.88 pixel Dice, 1.6 s per image on CPU, with an ablation of every operator.</p>
+               data-en="A program that analyses microscope images of blood and does the counting a lab technician would do by hand. It finds every red cell, white cell and platelet, separates cells that touch each other, counts and measures them, and flags cells that look abnormal. It works with classic image-processing techniques instead of a heavy AI model, so it runs on an ordinary computer. On a public test dataset it finds white cells correctly <strong>90% of the time</strong> and processes an image in <strong>1.6 seconds</strong>."
+               data-fr="Un programme qui analyse des images de sang au microscope et fait le comptage qu'un technicien de laboratoire ferait à la main. Il repère chaque globule rouge, globule blanc et plaquette, sépare les cellules collées entre elles, les compte, les mesure et signale celles qui semblent anormales. Il repose sur des techniques classiques de traitement d'image plutôt que sur un modèle d'IA lourd, et tourne donc sur un ordinateur ordinaire. Sur un jeu de données public, il identifie correctement les globules blancs dans <strong>90 % des cas</strong> et traite une image en <strong>1,6 seconde</strong>.">A program that analyses microscope images of blood and does the counting a lab technician would do by hand. It finds every red cell, white cell and platelet, separates cells that touch each other, counts and measures them, and flags cells that look abnormal. It works with classic image-processing techniques instead of a heavy AI model, so it runs on an ordinary computer. On a public test dataset it finds white cells correctly <strong>90% of the time</strong> and processes an image in <strong>1.6 seconds</strong>.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1054,15 +1100,44 @@
         </div>
       </div>
 
-      <!-- EcoNexus -->
-      <div class="project-item" data-assets="assets/projects/econexus">
+      <!-- AI Textil (Warp Analytics internship) -->
+      <div id="project-ai-textil" class="project-item" data-assets="assets/projects/AI-Textil">
         <div class="project-info">
           <div>
             <div class="project-number" data-en="Project 03" data-fr="Projet 03">Project 03</div>
+            <div class="project-title" data-en="AI Textil — Workforce Allocation Engine" data-fr="AI Textil — Moteur d'allocation des opérateurs">AI Textil — Workforce Allocation Engine</div>
+            <p class="project-desc"
+               data-en="A smart planner for a clothing factory, built on a real textile manufacturer's data and <strong>delivered to them: it is deployed and in use</strong>. Every day it decides which worker goes to which machine on a sewing line, and it rearranges the plan instantly when someone is absent. A line can only go as fast as its slowest step, so putting the right person in the right place matters. The system learns each worker's real skills from <strong>230,000 production records</strong>, then builds the plan that gets the most garments out. Tested on 121 real working days against the factory's own plans, it did as well or better <strong>87% of the time</strong> and raised output by <strong>8%</strong>. When 3 workers are absent, it keeps <strong>87% of production</strong> running, where doing nothing would stop the line."
+               data-fr="Un planificateur intelligent pour une usine de confection, construit sur les données réelles d'un fabricant textile et <strong>livré à ce client : il est déployé et utilisé</strong>. Chaque jour, il décide quel ouvrier travaille sur quel poste d'une ligne de couture, et réorganise le plan instantanément en cas d'absence. Une ligne ne va jamais plus vite que son étape la plus lente : placer la bonne personne au bon endroit est donc essentiel. Le système apprend les vraies compétences de chaque ouvrier à partir de <strong>230 000 enregistrements de production</strong>, puis construit le plan qui produit le plus de vêtements. Testé sur 121 jours de travail réels face aux plans de l'usine, il a fait aussi bien ou mieux dans <strong>87 % des cas</strong> et augmenté la production de <strong>8 %</strong>. Avec 3 absents, il maintient <strong>87 % de la production</strong>, là où ne rien faire arrêterait la ligne.">A smart planner for a clothing factory, built on a real textile manufacturer's data and <strong>delivered to them: it is deployed and in use</strong>. Every day it decides which worker goes to which machine on a sewing line, and it rearranges the plan instantly when someone is absent. A line can only go as fast as its slowest step, so putting the right person in the right place matters. The system learns each worker's real skills from <strong>230,000 production records</strong>, then builds the plan that gets the most garments out. Tested on 121 real working days against the factory's own plans, it did as well or better <strong>87% of the time</strong> and raised output by <strong>8%</strong>. When 3 workers are absent, it keeps <strong>87% of production</strong> running, where doing nothing would stop the line.</p>
+          </div>
+          <div>
+            <div class="project-tech">
+              <span class="tech-badge">Python</span><span class="tech-badge">pandas</span>
+              <span class="tech-badge">scikit-learn</span><span class="tech-badge">OR-Tools (CP-SAT)</span>
+              <span class="tech-badge" data-en="Optimization" data-fr="Optimisation">Optimization</span>
+              <span class="tech-badge">SQLite / MariaDB</span>
+            </div>
+            <div class="project-links-row">
+              <span class="proj-context" data-en="In production &middot; Warp Analytics" data-fr="En production &middot; Warp Analytics">In production &middot; Warp Analytics</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-showcase fit-landscape" style="--show-glow:rgba(94,234,212,0.16);--show-accent:#5eead4">
+          <div class="showcase-mono" style="color:#5eead4">At</div>
+          <div class="showcase-label" data-en="Machine Learning &middot; Optimization" data-fr="Machine Learning &middot; Optimisation">Machine Learning &middot; Optimization</div>
+          <div class="showcase-tags"><span>Ridge</span><span>CP-SAT</span><span>Line balancing</span></div>
+        </div>
+      </div>
+
+      <!-- EcoNexus -->
+      <div class="project-item reverse" data-assets="assets/projects/econexus">
+        <div class="project-info">
+          <div>
+            <div class="project-number" data-en="Project 04" data-fr="Projet 04">Project 04</div>
             <div class="project-title">EcoNexus</div>
             <p class="project-desc"
-               data-en="A financial-intelligence platform leveraging machine learning to analyse thousands of stocks and support investment decisions — combining a knowledge graph, vector search, and asynchronous data pipelines."
-               data-fr="Une plateforme d'intelligence financière exploitant le machine learning pour analyser des milliers d'actions et aider à la décision d'investissement — combinant graphe de connaissances, recherche vectorielle et pipelines de données asynchrones.">A financial-intelligence platform leveraging machine learning to analyse thousands of stocks and support investment decisions — combining a knowledge graph, vector search, and asynchronous data pipelines.</p>
+               data-en="A platform that helps people decide where to invest. It follows <strong>thousands of stocks</strong>, collects market data about them automatically, and uses machine learning to support investment decisions. It also maps how companies, sectors and events are linked, so you can understand why a stock moves, not just that it moves."
+               data-fr="Une plateforme qui aide à décider où investir. Elle suit <strong>des milliers d'actions</strong>, collecte automatiquement les données de marché qui les concernent, et utilise le machine learning pour aider à la décision d'investissement. Elle cartographie aussi les liens entre entreprises, secteurs et événements, pour comprendre pourquoi une action bouge, et pas seulement qu'elle bouge.">A platform that helps people decide where to invest. It follows <strong>thousands of stocks</strong>, collects market data about them automatically, and uses machine learning to support investment decisions. It also maps how companies, sectors and events are linked, so you can understand why a stock moves, not just that it moves.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1085,14 +1160,14 @@
       </div>
 
       <!-- Clinika -->
-      <div class="project-item reverse" data-assets="assets/projects/clinika">
+      <div id="project-clinika" class="project-item" data-assets="assets/projects/clinika">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 04" data-fr="Projet 04">Project 04</div>
+            <div class="project-number" data-en="Project 05" data-fr="Projet 05">Project 05</div>
             <div class="project-title">Clinika</div>
             <p class="project-desc"
-               data-en="A SaaS management platform for dental practices — appointments, patient records, and billing — currently used in production by real clients. Built during my apprenticeship at Warp Analytics."
-               data-fr="Une plateforme SaaS de gestion pour cabinets dentaires — rendez-vous, dossiers patients et facturation — actuellement utilisée en production par des clients réels. Réalisée durant mon alternance chez Warp Analytics.">A SaaS management platform for dental practices — appointments, patient records, and billing — currently used in production by real clients. Built during my apprenticeship at Warp Analytics.</p>
+               data-en="An online app that runs a dental practice: appointments, patient files and billing in one place. It is <strong>used by real dental clinics</strong> today. Built during my apprenticeship at Warp Analytics."
+               data-fr="Une application en ligne qui gère un cabinet dentaire : rendez-vous, dossiers patients et facturation au même endroit. Elle est <strong>utilisée aujourd'hui par de vrais cabinets dentaires</strong>. Réalisée durant mon alternance chez Warp Analytics.">An online app that runs a dental practice: appointments, patient files and billing in one place. It is <strong>used by real dental clinics</strong> today. Built during my apprenticeship at Warp Analytics.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1115,14 +1190,14 @@
       </div>
 
       <!-- ExamBuilder -->
-      <div class="project-item" data-assets="assets/projects/exambuilder">
+      <div id="project-exambuilder" class="project-item reverse" data-assets="assets/projects/exambuilder">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 05" data-fr="Projet 05">Project 05</div>
+            <div class="project-number" data-en="Project 06" data-fr="Projet 06">Project 06</div>
             <div class="project-title">ExamBuilder</div>
             <p class="project-desc"
-               data-en="A SaaS platform for automated exam creation and management built for teachers — question banks, generation, and grading workflows. Developed during my internship at DevWise."
-               data-fr="Une plateforme SaaS de création et de gestion automatisée d'examens conçue pour les enseignants — banques de questions, génération et flux de correction. Développée durant mon stage chez DevWise.">A SaaS platform for automated exam creation and management built for teachers — question banks, generation, and grading workflows. Developed during my internship at DevWise.</p>
+               data-en="A website that helps teachers create exams quickly. Teachers store their questions in a bank, generate a full exam in a few clicks, and manage grading in the same place. Built during my internship at DevWise."
+               data-fr="Un site qui aide les enseignants à créer des examens rapidement. Les enseignants stockent leurs questions dans une banque, génèrent un examen complet en quelques clics et gèrent la correction au même endroit. Réalisé durant mon stage chez DevWise.">A website that helps teachers create exams quickly. Teachers store their questions in a bank, generate a full exam in a few clicks, and manage grading in the same place. Built during my internship at DevWise.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1144,14 +1219,14 @@
       </div>
 
       <!-- Moove -->
-      <div class="project-item reverse" data-assets="assets/projects/moove">
+      <div class="project-item" data-assets="assets/projects/moove">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 06" data-fr="Projet 06">Project 06</div>
+            <div class="project-number" data-en="Project 07" data-fr="Projet 07">Project 07</div>
             <div class="project-title">Moove</div>
             <p class="project-desc"
-               data-en="Moove is a sports-management application integrating coach–client communication and automatic exercise suggestions to personalise training plans. Built during my apprenticeship at Warp Analytics."
-               data-fr="Moove est une application de gestion sportive intégrant la communication coach-clients et des suggestions automatiques d'exercices pour personnaliser les plans d'entraînement. Réalisée durant mon alternance chez Warp Analytics.">Moove is a sports-management application integrating coach–client communication and automatic exercise suggestions to personalise training plans. Built during my apprenticeship at Warp Analytics.</p>
+               data-en="A fitness app that connects sports coaches with their clients. Coaches and clients talk to each other in the app, and it suggests exercises automatically to build a training plan that fits each person. Built during my apprenticeship at Warp Analytics."
+               data-fr="Une application sportive qui relie les coachs à leurs clients. Coachs et clients échangent dans l'application, qui suggère automatiquement des exercices pour construire un programme adapté à chacun. Réalisée durant mon alternance chez Warp Analytics.">A fitness app that connects sports coaches with their clients. Coaches and clients talk to each other in the app, and it suggests exercises automatically to build a training plan that fits each person. Built during my apprenticeship at Warp Analytics.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1173,14 +1248,14 @@
       </div>
 
       <!-- ExpertHub -->
-      <div class="project-item" data-assets="assets/projects/experthub">
+      <div class="project-item reverse" data-assets="assets/projects/experthub">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 07" data-fr="Projet 07">Project 07</div>
+            <div class="project-number" data-en="Project 08" data-fr="Projet 08">Project 08</div>
             <div class="project-title">ExpertHub</div>
             <p class="project-desc"
-               data-en="A marketplace platform connecting experts with users seeking advice — profiles, search, and booking. A full-stack personal project."
-               data-fr="Une plateforme de mise en relation entre experts et utilisateurs en quête de conseils — profils, recherche et réservation. Projet personnel full-stack.">A marketplace platform connecting experts with users seeking advice — profiles, search, and booking. A full-stack personal project.</p>
+               data-en="A website that connects people who need advice with experts who can give it. Experts create a profile, users search for the right person and book a session. A personal project I built from start to finish."
+               data-fr="Un site qui met en relation les personnes qui ont besoin de conseils avec des experts. Les experts créent un profil, les utilisateurs cherchent la bonne personne et réservent une séance. Un projet personnel réalisé de A à Z.">A website that connects people who need advice with experts who can give it. Experts create a profile, users search for the right person and book a session. A personal project I built from start to finish.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1200,14 +1275,14 @@
       </div>
 
       <!-- StockFacturation -->
-      <div class="project-item reverse" data-assets="assets/projects/stockfacturation">
+      <div id="project-stockfacturation" class="project-item" data-assets="assets/projects/stockfacturation">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 08" data-fr="Projet 08">Project 08</div>
+            <div class="project-number" data-en="Project 09" data-fr="Projet 09">Project 09</div>
             <div class="project-title">StockFacturation</div>
             <p class="project-desc"
-               data-en="A desktop stock-management and invoicing application built for a freelance client and used in production every day — inventory tracking, billing, and reporting through a native WPF interface. The client has already issued over 1,000 real invoices with it."
-               data-fr="Une application bureau de gestion de stock et de facturation réalisée pour un client freelance et utilisée en production au quotidien — suivi d'inventaire, facturation et reporting via une interface native WPF. Le client a déjà émis plus de 1 000 factures réelles avec l'application.">A desktop stock-management and invoicing application built for a freelance client and used in production every day — inventory tracking, billing, and reporting through a native WPF interface. The client has already issued over 1,000 real invoices with it.</p>
+               data-en="A computer program that lets a business track its stock and create invoices. Built for a real client who uses it every day, and who has already issued <strong>more than 1,000 real invoices</strong> with it."
+               data-fr="Un logiciel qui permet à une entreprise de suivre son stock et d'établir ses factures. Réalisé pour un vrai client qui l'utilise chaque jour et qui a déjà émis <strong>plus de 1 000 factures réelles</strong> avec.">A computer program that lets a business track its stock and create invoices. Built for a real client who uses it every day, and who has already issued <strong>more than 1,000 real invoices</strong> with it.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1228,14 +1303,14 @@
       </div>
 
       <!-- Compiler -->
-      <div class="project-item" data-assets="assets/projects/compiler-c">
+      <div class="project-item reverse" data-assets="assets/projects/compiler-c">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 09" data-fr="Projet 09">Project 09</div>
+            <div class="project-number" data-en="Project 10" data-fr="Projet 10">Project 10</div>
             <div class="project-title" data-en="Compiler in C" data-fr="Compilateur en C">Compiler in C</div>
             <p class="project-desc"
-               data-en="A compiler written from scratch in C — lexical analysis, parsing, and code generation — exploring how source code is transformed into executable instructions."
-               data-fr="Un compilateur écrit entièrement en C — analyse lexicale, analyse syntaxique et génération de code — pour explorer la transformation du code source en instructions exécutables.">A compiler written from scratch in C — lexical analysis, parsing, and code generation — exploring how source code is transformed into executable instructions.</p>
+               data-en="A program, written from scratch, that translates code written by a person into instructions a computer can run. I built it to understand how programming languages work under the hood."
+               data-fr="Un programme, écrit de zéro, qui traduit le code écrit par une personne en instructions qu'un ordinateur peut exécuter. Je l'ai conçu pour comprendre comment fonctionnent les langages de programmation de l'intérieur.">A program, written from scratch, that translates code written by a person into instructions a computer can run. I built it to understand how programming languages work under the hood.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1257,14 +1332,14 @@
       </div>
 
       <!-- E-Uber -->
-      <div class="project-item reverse" data-assets="assets/projects/E-Uber">
+      <div class="project-item" data-assets="assets/projects/E-Uber">
         <div class="project-info">
           <div>
-            <div class="project-number" data-en="Project 10" data-fr="Projet 10">Project 10</div>
+            <div class="project-number" data-en="Project 11" data-fr="Projet 11">Project 11</div>
             <div class="project-title">E-Uber</div>
             <p class="project-desc"
-               data-en="A ride-hailing management simulation written in C — models drivers, riders and trip requests using linked lists and FIFO/LIFO queues, with all data persisted to a flat text file. An academic data-structures project (no database, no GUI)."
-               data-fr="Une simulation de gestion de VTC écrite en C — modélise chauffeurs, passagers et demandes de course à l'aide de listes chaînées et de files FIFO/LIFO, avec persistance des données dans un fichier texte. Projet académique de structures de données (sans base de données ni interface graphique).">A ride-hailing management simulation written in C — models drivers, riders and trip requests using linked lists and FIFO/LIFO queues, with all data persisted to a flat text file. An academic data-structures project (no database, no GUI).</p>
+               data-en="A small simulation of a ride-hailing service like a taxi app: it manages drivers, passengers and ride requests, and saves everything to a file. A university project about organising data efficiently."
+               data-fr="Une petite simulation d'un service de VTC, comme une application de taxi : elle gère chauffeurs, passagers et demandes de course, et enregistre tout dans un fichier. Un projet universitaire sur l'organisation efficace des données.">A small simulation of a ride-hailing service like a taxi app: it manages drivers, passengers and ride requests, and saves everything to a file. A university project about organising data efficiently.</p>
           </div>
           <div>
             <div class="project-tech">
@@ -1554,7 +1629,7 @@
   // ---- MEDIA AUTO-WIRING (covers · galleries · video · lightbox) ----
   // Drop files into assets/<...>/ following the naming convention and they
   // appear here automatically. Missing files are silently ignored.
-  var IMG_EXTS = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
+  var IMG_EXTS = ['jpg', 'jpeg', 'png', 'webp', 'svg', 'gif'];
   var GALLERY_MAX = 6;
   var lb = { items: [], index: 0 };
 
@@ -1750,6 +1825,27 @@
       return;
     }
 
+    // Experience: a cover (e.g. a certificate) sits beside the text, small; the rest is a strip
+    if (card.classList.contains('timeline-card') && data.cover) {
+      var fig = document.createElement('figure');
+      fig.className = 'timeline-side';
+      var im = document.createElement('img');
+      im.src = data.cover; im.alt = name; im.loading = 'lazy';
+      fig.appendChild(im);
+      var lEn = card.getAttribute('data-side-en'), lFr = card.getAttribute('data-side-fr');
+      if (lEn) {
+        var fc = document.createElement('figcaption');
+        fc.setAttribute('data-en', lEn); fc.setAttribute('data-fr', lFr || lEn);
+        fc.textContent = currentLang === 'fr' ? (lFr || lEn) : lEn;
+        fig.appendChild(fc);
+      }
+      fig.addEventListener('click', function () { openLightbox(images, 0); });
+      card.classList.add('has-side');
+      card.appendChild(fig);
+      buildStrip(card, name, images.slice(1), images, 1);
+      return;
+    }
+
     // Events / experience: photos (and any video) as a strip; no showcase panel
     var all = images.concat(data.video
       ? [{ url: data.video.url, type: 'video', caption: name + ' — demo', poster: data.video.poster }]
@@ -1802,6 +1898,78 @@
     });
   }
 
+  // "i" buttons on hero stats. Opens on hover (mouse) or tap/click (touch, keyboard).
+  // Each time it opens it picks below/above the button, whichever fits on screen
+  // (and inside #about, which clips overflow), and shifts sideways to stay on screen.
+  function setupStatTips() {
+    document.querySelectorAll('.hero-stat-row').forEach(function (row) {
+      var btn = row.querySelector('.stat-info');
+      var tip = row.querySelector('.stat-tip');
+      if (!btn || !tip) return;
+      var closeTimer = null, pinned = false;
+      var GAP = 10, EDGE = 16;
+
+      // The box is position:fixed, so the hero section's overflow:hidden can't clip it.
+      // Each time it opens it goes below the "i" if it fits on screen, else above,
+      // and slides sideways to stay at least EDGE px inside the window.
+      function place() {
+        var r = row.getBoundingClientRect();
+        var h = tip.offsetHeight, w = tip.offsetWidth;
+        var nav = document.querySelector('nav');
+        var topLimit = Math.max(nav ? nav.getBoundingClientRect().bottom : 0, 0);
+        var vw = document.documentElement.clientWidth, vh = window.innerHeight;
+        var spaceBelow = vh - r.bottom - GAP;
+        var spaceAbove = r.top - topLimit - GAP;
+        var need = h + 14;                 // box + room for its drop shadow
+        var below = spaceBelow >= need ? true
+                  : spaceAbove >= need ? false
+                  : spaceBelow > spaceAbove;  // neither fits fully: use the roomier side
+        tip.classList.toggle('below', below);
+        tip.classList.toggle('above', !below);
+        var top = below ? r.bottom + GAP : r.top - GAP - h;
+        var left = Math.max(EDGE, Math.min(r.left, vw - EDGE - w));
+        tip.style.top = Math.round(top) + 'px';
+        tip.style.left = Math.round(left) + 'px';
+      }
+      function open() {
+        clearTimeout(closeTimer);
+        if (tip.classList.contains('open')) return;
+        place();
+        tip.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        clearTimeout(closeTimer);
+        pinned = false;
+        tip.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      function closeSoon() {
+        if (pinned) return;
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(close, 180);
+      }
+
+      row.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') open(); });
+      row.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') closeSoon(); });
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (tip.classList.contains('open') && pinned) { close(); }
+        else { pinned = true; open(); }
+      });
+      tip.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+      document.addEventListener('click', function (e) { if (!row.contains(e.target)) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && tip.classList.contains('open')) { close(); btn.focus(); }
+      });
+      row.addEventListener('focusout', function (e) {
+        if (!row.contains(e.relatedTarget)) close();
+      });
+      window.addEventListener('resize', function () { if (tip.classList.contains('open')) place(); });
+      window.addEventListener('scroll', function () { if (tip.classList.contains('open')) place(); }, { passive: true });
+    });
+  }
+
   function setupMedia() {
     setupLightboxControls();
     document.querySelectorAll('[data-assets]').forEach(enhanceCard);
@@ -1820,6 +1988,7 @@
     setupScrollSpy();
     setupMedia();
     setupEmailCopy();
+    setupStatTips();
   });
 </script>
 </body>
